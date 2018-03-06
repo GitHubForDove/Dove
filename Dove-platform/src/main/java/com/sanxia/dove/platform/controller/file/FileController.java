@@ -48,7 +48,7 @@ public class FileController {
         FileStorer fileStorer = fileService.getFloderDir(path,requestURL.toString());
 
         model.addAttribute("files",fileStorer);
-        return "dove/index";
+        return "file/index";
     }
 
     /***
@@ -66,6 +66,6 @@ public class FileController {
         FileStorer fileStorer = fileService.showFile(path.replaceFirst("Blob","Floder"));
         logger.info(fileStorer.getFileContent());
         model.addAttribute("file",fileStorer);
-        return "dove/file";
+        return "file/file";
     }
 }
